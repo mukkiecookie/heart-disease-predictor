@@ -4,6 +4,11 @@ import numpy as np
 import pickle
 import base64
 
+st.set_page_config(
+    page_title="Heart Disease Predictor",
+    page_icon="❤️",
+)
+
 def get_binary_file_downloader_html(df):
     csv = df.to_csv(index=False)
     b64 = base64.b64encode(csv.encode()).decode()  # some strings <-> bytes conversions necessary here
@@ -11,6 +16,52 @@ def get_binary_file_downloader_html(df):
     return href
 
 st.title("Heart Disease Predictor")
+
+st.markdown("""
+<style>
+
+/* Main app background */
+.stApp {
+    background: radial-gradient(circle at center,
+        rgba(255,0,0,0.35) 0%,
+        rgba(120,0,0,0.18) 25%,
+        rgba(20,0,0,0.95) 55%,
+        #000000 100%);
+    background-size: 200% 200%;
+    animation: pulseGlow 4s ease-in-out infinite;
+}
+
+/* Animated red glow */
+@keyframes pulseGlow {
+    0% {
+        background-size: 180% 180%;
+        filter: brightness(1);
+    }
+
+    50% {
+        background-size: 230% 230%;
+        filter: brightness(1.25);
+    }
+
+    100% {
+        background-size: 180% 180%;
+        filter: brightness(1);
+    }
+}
+
+/* Optional glass effect for containers */
+[data-testid="stVerticalBlock"] {
+    border-radius: 20px;
+}
+
+/* Make text cleaner */
+h1, h2, h3, label, p, div {
+    color: white !important;
+}
+
+</style>
+""", unsafe_allow_html=True)
+
 tab1,tab2,tab3 = st.tabs(['Predict','Bulk Predict','Model Information'])
 
 with tab1:
