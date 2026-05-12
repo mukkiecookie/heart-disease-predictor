@@ -163,7 +163,7 @@ with tab2:
             1. No NaN values allowed.
             2. Total 11 columns required in this order. (Age, Sex, ChestPainType, RestingBP, Cholesterol, FastingBS, RestingECG, MaxHR, ExerciseAngina, Oldpeak, ST_Slope).\n
             3. Check the spelling of the column names and values carefully.
-            4. Featur values conventions: \n
+            4. Feature values conventions: \n
                 - Age: age in years (integer) \n
                 - Sex: "Male" or "Female" \n
                 - ChestPainType: "Typical Angina", "Atypical Angina", "Non-anginal Pain", "Asymptomatic" \n
